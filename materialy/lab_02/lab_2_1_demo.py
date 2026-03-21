@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import logging
-
+"""asd"""
 # Konfiguracja logowania, aby widzieć postępy w konsoli
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 

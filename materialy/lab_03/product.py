@@ -6,34 +6,39 @@ class Product:
     """Reprezentuje produkt w sklepie internetowym."""
 
     def __init__(self, name: str, price: float, quantity: int):
-        # TODO: Zapisz atrybuty name, price, quantity
-        # Pamietaj o walidacji: price >= 0, quantity >= 0
-        pass
+        self.name = name
+        if price < 0:
+            raise ValueError("Price cannot be negative")
+        self.price = price
+        if quantity < 0:
+            raise ValueError("Quantity cannot be negative")
+        self.quantity = quantity
 
     def add_stock(self, amount: int):
-        """Dodaje okreslona ilosc produktow do magazynu.
-
-        Raises:
-            ValueError: jesli amount jest ujemne
-        """
-        # TODO: Zaimplementuj dodawanie do magazynu
-        pass
+        if amount < 0:
+            raise ValueError("Amount cannot be negative")
+        self.quantity += amount
+        return self.quantity
 
     def remove_stock(self, amount: int):
-        """Usuwa okreslona ilosc produktow z magazynu.
+        if amount < 0:
+            raise ValueError("Amount cannot be negative")
+        
+        if self.quantity < amount:
+            raise ValueError("Not enough stock")
+        
+        self.quantity -= amount
+        return self.quantity
 
-        Raises:
-            ValueError: jesli amount jest ujemne lub wieksze niz dostepna ilosc
-        """
-        # TODO: Zaimplementuj usuwanie z magazynu
-        pass
 
     def is_available(self) -> bool:
-        """Zwraca True jesli produkt jest dostepny (quantity > 0)."""
-        # TODO: Zaimplementuj sprawdzanie dostepnosci
-        pass
+        return self.quantity > 0
 
     def total_value(self) -> float:
-        """Zwraca calkowita wartosc produktow w magazynie (price * quantity)."""
-        # TODO: Zaimplementuj obliczanie wartosci
-        pass
+        return self.price * self.quantity if self.is_available() else 0
+    
+    def apply_discount(self, percent: float):
+        if percent < 0 or percent > 100:
+            raise ValueError("Discount cannot be negative or greater than 100%")
+        self.price *= (1 - percent / 100)
+        return self.price

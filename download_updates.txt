@@ -1,0 +1,5 @@
+git fetch upstream
+git checkout upstream/main -- materialy/lab_04
+git add materialy/lab_04
+git commit -m "dodanie materialow lab_04"
+git push origin main

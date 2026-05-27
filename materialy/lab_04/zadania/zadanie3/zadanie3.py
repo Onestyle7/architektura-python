@@ -22,7 +22,7 @@ def semantic_search(query_vec, database, top_k=3):
     return wyniki[:top_k]
 
 query = np.array([0.7, 0.3, 0.8])  # "cos jak sci-fi"
-results = semantic_search(query, filmy, top_k=3)
+results = semantic_search(query, filmy, top_k=5)
 
 for title, sim in results:
     print(f"  {title}: {sim:.3f}")

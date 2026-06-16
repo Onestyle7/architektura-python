@@ -19,7 +19,7 @@ def imdb_sample():
     ("<br><p></p>", 0),                     # sam HTML
     ("Hello WORLD!", 2),                    # mieszany case
     ("...!?!?!?", 0),                       # tylko interpunkcja
-    ("za¿ó³æ gêœl¹ jaŸñ", 3),               # polskie diakrytyki
+    ("zaÅ¼Ã³Å‚Ä‡ gÄ™Å›lÄ… jaÅºÅ„", 3),               # polskie diakrytyki
     ("the cat sat on the mat", 6),          # zwykle zdanie
 ])
 def test_tokenize_cases(tokenizer, text, expected_len):

@@ -1,0 +1,37 @@
+{
+  "contract": "imdb_quality_contract",
+  "timestamp": "2026-06-17T22:13:10.037962",
+  "dataset_rows": 2000,
+  "results": {
+    "no_nulls": {
+      "passed": "True",
+      "severity": "error",
+      "details": "Nulle: {'text': np.int64(0), 'label': np.int64(0)}"
+    },
+    "labels_in_set": {
+      "passed": "True",
+      "severity": "error",
+      "details": "Unikalne labele: [np.int64(0), np.int64(1)]"
+    },
+    "min_word_count": {
+      "passed": "True",
+      "severity": "warning",
+      "details": "Recenzji < 5 słów: 0"
+    },
+    "max_word_count": {
+      "passed": "True",
+      "severity": "warning",
+      "details": "Recenzji > 2000 słów: 0"
+    },
+    "no_duplicates": {
+      "passed": "True",
+      "severity": "warning",
+      "details": "duplikaty: 0"
+    },
+    "class_balance": {
+      "passed": "True",
+      "severity": "warning",
+      "details": "Stosunek klas: 1.000"
+    }
+  }
+}
